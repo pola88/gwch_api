@@ -1,0 +1,41 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "build/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap \"test/**/*.test.js\"",
+    "start": "npm run clean && tsc && npm run copy-db && node build/index.js",
+    "create-db": "CREATING_DB=true babel-node --presets @babel/preset-env db/create_db.js",
+    "copy-db": "cp guidwheel.db ./build",
+    "clean": "rm -rf build",
+    "dev": "fastify start -w -l info -P app.js",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "pola88 <pola88@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^5.0.0",
+    "@fastify/sensible": "^4.1.0",
+    "csvtojson": "^2.0.10",
+    "fastify": "^4.0.0",
+    "fastify-cli": "^4.4.0",
+    "fastify-plugin": "^3.0.0",
+    "sqlite3": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@fastify/cors": "^8.2.0",
+    "@types/node": "^18.11.15",
+    "@typescript-eslint/parser": "^5.46.1",
+    "tap": "^16.1.0",
+    "typescript": "^4.9.4"
+  }
+}
