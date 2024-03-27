@@ -1,4 +1,4 @@
-# Guidewheel
+# Challenge
 
 ## Install dependencies
 
